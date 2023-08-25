@@ -1,0 +1,135 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.iconContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background: #EBEBEB;
+    border-radius: 15px;
+    padding: 20px;
+    width: 100%;
+    max-width: 505px;
+}
+
+.iconContainers {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background: #EBEBEB;
+    border-radius: 15px;
+    padding: 20px;
+    width: 90%;
+    max-width: 505px;
+}
+
+.secondColorDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #D3D3D3;
+    border-radius: 5px;
+}
+
+.secondColorDivs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #D3D3D3;
+    border-radius: 5px;
+
+}
+
+.image {
+    border-radius: 10px;
+}
+
+.images {
+    border-radius: 10px;
+}
+
+.selected {
+    border: 4px solid #2F4FBB;
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+}
+
+
+.inputDiv {
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.exampleParagraph {
+    font-family: 'Plain';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #677683;
+}
+
+.exampleText {
+    font-family: 'Plain';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #181715;
+    padding: 10px 20px;
+}
+
+.inputArea {
+    height: 60px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* Bottom area */
+.imageTextDiv {
+    margin-top: 15px;
+}
+
+.imageTextHeader {
+    font-family: 'Plain';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #181715;
+}
+
+@media (max-width: 2250px) {
+    .iconContainer {
+        width: 410px;
+        max-width: 405px;
+    }
+
+    .iconContainers {
+        width: 330px;
+        max-width: 405px;
+    }
+
+    .secondColorDiv {
+        height: 200px;
+    }
+
+    .secondColorDivs {
+        height: 170px;
+    }
+
+    .image {
+        width: 350px;
+    }
+
+    .images {
+        width: 300px;
+        height: 220px;
+    }
+}

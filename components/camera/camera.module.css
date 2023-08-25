@@ -1,0 +1,56 @@
+.cameraWrapper {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(8, 1fr);
+    margin-bottom: 40px;
+}
+
+.photoDiv {
+    display: grid;
+    grid-column: 2 / span 6;
+    justify-content: center;
+    position: relative;
+    height: 440px;
+    grid-column: 2 / span 6;
+}
+
+
+.cameraBtn {
+    position: absolute;
+    bottom: 40px;
+    right: 50%;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+}
+
+.iconPhoto {
+    position: absolute;
+    bottom: -15px;
+    right: -30%;
+    z-index: 1;
+    filter: blur(1px);
+}
+
+.retakePhoto {
+    position: absolute;
+    bottom: 40px;
+    right: 50%;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #2250C6;
+    border: none;
+    box-shadow: 0px 8px 15px #2250C6;
+}
+
+.iconRetakePhoto {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 1;
+}

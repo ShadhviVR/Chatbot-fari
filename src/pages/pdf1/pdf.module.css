@@ -1,0 +1,70 @@
+.container {
+    margin: 40px;
+}
+
+.stepHeader {
+    font-family: 'Plain';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 20px;
+    color: #181715;
+}
+
+.stepParagraph {
+    font-family: 'Plain';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #181715;
+    margin-bottom: 40px;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 40px;
+}
+
+.gridItem {
+    grid-column: span 4;
+}
+
+.inputHeader {
+    font-family: 'Plain';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 17px;
+    color: #677683;
+    margin-bottom: 20px;
+}
+
+.userInputDiv {
+    display: grid;
+    grid-template-rows: 100px;
+    border: 2px solid #EBEBEB;
+    border-radius: 5px;
+    position: relative;
+    width: 95%;
+    height: 90%;
+}
+
+.input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-color: #677683;
+    border-radius: 15px;
+    border: none;
+}
+
+.selectedImage {
+    width: 95%;
+    height: 340px;
+    border-radius: 15px;
+    object-fit: cover;
+}

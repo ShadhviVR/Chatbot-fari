@@ -1,0 +1,37 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0px 40px 40px 40px;
+
+}
+
+
+.nextStepBtn {
+    font-weight: 400;
+    font-style: 16px;
+    line-height: 20px;
+    cursor: pointer;
+    border-radius: 70px;
+    width: 400px;
+    height: 50px;
+    border: none;
+    background-color: #2F4FBB;
+    color: white;
+}
+
+.disabledBtn {
+    background: rgba(47, 79, 187, 0.4);
+}
+
+@media (max-width: 2250px) {
+    .nextStepBtn {
+        width: 200px;
+    }
+
+}

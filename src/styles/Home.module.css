@@ -1,0 +1,46 @@
+/* Style for container */
+.container {
+    margin: 40px 40px 0px 40px;
+}
+
+.headingInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    font-family: 'Plain';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.inputParagraph {
+    margin-top: 15px;
+    font-family: 'Plain';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 40px;
+    color: #181715;
+}
+
+.cartsDiv {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    max-width: max-content;
+    gap: 40px;
+    margin: 0 auto;
+}
+
+.box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    max-width: max-content;
+    gap: 40px;
+    margin: 0 auto;
+}
