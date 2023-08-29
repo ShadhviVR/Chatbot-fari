@@ -2,7 +2,7 @@ import styles from './pdf.module.css';
 import Loading from '../../../components/Loading/loading';
 import { useEffect, useState } from 'react';
 import { fetchData, fetchGenerativeAi } from '../../../api/axios';
-import ChatInterface from '../chatbot';
+import ChatInterface from '../chatbotpdf1';
 
 function Pdf1({ languages }) {
 

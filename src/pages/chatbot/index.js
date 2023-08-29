@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import styles from './chat.module.css';
 
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'http://46.226.110.124:5000';
 
 const ChatInterface = () => {
   const [conversationId, setConversationId] = useState(null);
@@ -172,7 +172,7 @@ const ChatInterface = () => {
     <div className={styles.chatContainer}>
       <div className={styles.header}>
         <button className={styles.refreshButton} onClick={handleRefresh}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 18c4.667 4.667 12 1.833 12-4.042h-3l5-6 5 6h-3c-1.125 7.98-11.594 11.104-16 4.042zm14-11.984c-4.667-4.667-12-1.834-12 4.041h3l-5 6-5-6h3c1.125-7.979 11.594-11.104 16-4.041z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M5 18c4.667 4.667 12 1.833 12-4.042h-3l5-6 5 6h-3c-1.125 7.98-11.594 11.104-16 4.042zm14-11.984c-4.667-4.667-12-1.834-12 4.041h3l-5 6-5-6h3c1.125-7.979 11.594-11.104 16-4.041z"/></svg>
         </button>
       </div>
       <div className={styles.chatMessages} ref={chatMessagesRef}>

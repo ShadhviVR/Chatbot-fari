@@ -1,6 +1,6 @@
 /* Style for container */
 .container {
-    margin: 40px 40px 0px 40px;
+    margin: 30px 40px 0px 40px;
 }
 
 .headingInfo {
@@ -33,7 +33,7 @@
     align-items: center;
     max-width: max-content;
     gap: 40px;
-    margin: 0 auto;
+    margin: 20px auto;
 }
 
 .box {

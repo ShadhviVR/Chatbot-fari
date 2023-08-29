@@ -1,5 +1,5 @@
 .container {
-    margin: 40px;
+    margin: 30px;
 }
 
 .stepHeader {
@@ -7,7 +7,7 @@
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
-    line-height: 32px;
+    line-height: 22px;
     margin-bottom: 20px;
     color: #181715;
 }
@@ -17,7 +17,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 10px;
     color: #181715;
     margin-bottom: 40px;
 }
@@ -37,7 +37,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 13px;
-    line-height: 17px;
+    line-height: 10px;
     color: #677683;
     margin-bottom: 20px;
 }

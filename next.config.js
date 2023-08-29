@@ -15,7 +15,7 @@ const nextConfig = {
       },
       {
         protocol: "http",
-        hostname: "localhost:5000/",
+        hostname: "46.226.110.124:5000",
       },
       {
         protocol: "http",
