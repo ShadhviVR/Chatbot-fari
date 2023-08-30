@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import styles from './chat.module.css';
+import { fetchChat } from '../../../api/axios';
 
 const API_BASE_URL = 'http://46.226.110.124:5000';
 
 const ChatInterface = () => {
   const [conversationId, setConversationId] = useState(null);
+  const [fetchedChat, setFetchedChat] = useState(null);
   const [inputMessage, setInputMessage] = useState('');
   const [messages, setMessages] = useState([]);
   const [isBotTyping, setIsBotTyping] = useState(false);
@@ -15,6 +17,17 @@ const ChatInterface = () => {
       sendMessage();
     }
   };
+
+  useEffect(() => {
+    fetchChat() // Call the fetchChat function
+      .then(data => {
+        setFetchedChat(data); // Update the fetchedChat state with the data
+      })
+      .catch(error => {
+        console.error('Error fetching chat data:', error);
+      });
+  }, []);
+  
 
   useEffect(() => {
     const initiateConversation = async () => {
@@ -124,16 +137,28 @@ const ChatInterface = () => {
       setIsBotTyping(false);
 
       setTimeout(() => {
-        setMessages((prevMessages) => [
-          ...prevMessages,
-          { role: 'bot', content: formatBotMessage(botMessage) },
-        ]);
+        // Add the fetched chat data to the existing messages
+        if (fetchedChat) {
+          setMessages((prevMessages) => [
+            ...prevMessages,
+            { role: 'bot', content: formatBotMessage(botMessage) },
+            ...fetchedChat.messages.map((message) => ({
+              role: 'bot',
+              content: formatBotMessage(message),
+            })),
+          ]);
+        } else {
+          setMessages((prevMessages) => [
+            ...prevMessages,
+            { role: 'bot', content: formatBotMessage(botMessage) },
+          ]);
+        }
       }, 500); // A short delay before showing the bot's response
     } catch (error) {
       setIsBotTyping(false);
       console.error('Error sending message:', error);
     }
-  };
+  };  
 
   useEffect(() => {
     if (conversationId) {
