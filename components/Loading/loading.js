@@ -13,11 +13,6 @@ const Loading = () => {
                     className={styles.logo}
                 />
                 <div className={styles.cover}></div>
-                <div className={styles.dots}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
             </div>
         </div>
     )

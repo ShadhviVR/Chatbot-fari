@@ -34,6 +34,18 @@ export const fetchGenerativeAi = async (languages) => {
     }
 }
 
+export const fetchChat = async () => {
+
+    try {
+        const response = await axios.get(`/api/proxy2`);
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        return null;
+    }
+}
+
+
 export const fetchInterfaceComponent = async (languages) => {
 
     try {

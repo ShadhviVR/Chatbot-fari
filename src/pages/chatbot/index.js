@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import styles from './chat.module.css';
+import { fetchChat } from '../../../api/axios';
 
 const API_BASE_URL = 'http://46.226.110.124:5000';
 
@@ -10,11 +11,19 @@ const ChatInterface = () => {
   const [messages, setMessages] = useState([]);
   const [isBotTyping, setIsBotTyping] = useState(false);
   const chatMessagesRef = useRef(null);
+  const [data, setData] = useState(null);
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       sendMessage();
     }
   };
+
+  useEffect(() => {
+  const fetchChat = async () => {
+        setData(data);
+  };
+  fetchChat();
+});
 
   useEffect(() => {
     const initiateConversation = async () => {
