@@ -5,10 +5,9 @@ import { fetchInterfaceComponent } from '../../api/axios';
 import { useEffect, useState } from 'react';
 
 
-const Footer = ({ handleNextStep, disabled, onSubmit, languages }) => {
+const Footer = ({ handleNextStep, handleTryAgain, disabled, onSubmit, languages }) => {
 
     const [translation, setTranslation] = useState(null);
-    console.log(translation, 'from footer')
     const router = useRouter();
 
     const handleButtonClick = (e) => {
@@ -20,6 +19,12 @@ const Footer = ({ handleNextStep, disabled, onSubmit, languages }) => {
         }
     };
 
+    const handleTryAgainClick = (e) => {
+        handleTryAgain(); // Call the function to handle "Try Again" action
+        e.preventDefault();
+        router.reload();
+    };
+
     useEffect(() => {
         const fetchDataAndUpdateState = async () => {
             const translatedData = await fetchInterfaceComponent(languages);
@@ -27,6 +32,8 @@ const Footer = ({ handleNextStep, disabled, onSubmit, languages }) => {
         };
         fetchDataAndUpdateState();
     }, [languages]);
+
+    const shouldDisplayTryAgainButton = ['/chat', '/headphone', '/tortoise','/color', '/building','/pdf1', '/pdf2','/pdf3', '/pdf4'].includes(router.pathname);
 
     return (
         <footer className={styles.footer} >
@@ -38,6 +45,14 @@ const Footer = ({ handleNextStep, disabled, onSubmit, languages }) => {
                         className={cls(styles.nextStepBtn, { [styles.disabledBtn]: disabled })}>
                         {translation && translation.data.attributes.next}
                     </button>
+                    {shouldDisplayTryAgainButton && (
+                    <button
+                        onClick={handleTryAgainClick}
+                        className={styles.tryAgainBtn}
+                    >
+                        {translation && translation.data.attributes.try_again}
+                    </button>
+                    )}
                 </div>
             </div>
         </footer>

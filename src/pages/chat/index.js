@@ -1,16 +1,17 @@
-import styles from './chat.module.css';
+import styles from '../headphone/ImageChat.module.css';
 import Loading from '../../../components/Loading/loading';
 import { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { fetchData, fetchGenerativeAi } from '../../../api/axios';
 import ChatInterface from '../chatbot';
 
-
-function Chat({ languages }) {
+function Color({ languages }) {
 
     const [loading, setLoading] = useState(false);
+    const [textInput, setTextInput] = useState('');
+    const [error, setError] = useState(null);
     const [translatedData, setTranslatedData] = useState(null);
     const [responseData, setResponseData] = useState(null);
-
 
     useEffect(() => {
         const fetchDataAndUpdateState = async () => {
@@ -35,12 +36,11 @@ function Chat({ languages }) {
                     </p>
                     <div className={styles.gridContainer}>
                         <div className={styles.gridItem}>
-                            <div className={styles.selectedImage}>   
-                                <p className={styles.inputHeader}>Type anything</p>
-
-                                <ChatInterface/>
-                                
-                            </div>
+                            <Loading />
+                        </div>
+                        <div className={styles.gridItem}>
+                            <p className={styles.inputHeader}>Type Anything</p>
+                           <ChatInterface/>
                         </div>
                     </div>
                 </div>
@@ -50,4 +50,4 @@ function Chat({ languages }) {
     )
 }
 
-export default Chat;
+export default Color;

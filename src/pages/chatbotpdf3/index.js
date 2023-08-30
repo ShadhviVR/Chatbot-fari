@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import styles from './chat.module.css';
+import styles from '../chatbotpdf1/chat.module.css';
 
 const API_BASE_URL = 'http://46.226.110.124:5000';
 
