@@ -20,9 +20,9 @@ const ChatInterface = () => {
 
   useEffect(() => {
   const fetchChat = async () => {
+    const data = await fetchChat()
         setData(data);
   };
-  fetchChat();
 });
 
   useEffect(() => {
