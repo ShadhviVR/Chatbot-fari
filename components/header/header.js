@@ -9,7 +9,7 @@ import { PredictionContext } from '../../context/PredictionContext';
 import { VersionContext } from '../../context/VersionContext';
 import { LinkContext } from '../../context/LinkContext';
 import { useContext, useEffect, useState } from 'react';
-import { fetchData, fetchGenerativeAi, fetchInterfaceComponent } from '../../api/axios';
+import { fetchChat, fetchData, fetchGenerativeAi, fetchInterfaceComponent } from '../../api/axios';
 
 const Header = ({ setNextPageHref, setSubmitForm, languages, setLanguages, disabled }) => {
 
@@ -63,6 +63,7 @@ const Header = ({ setNextPageHref, setSubmitForm, languages, setLanguages, disab
         await fetchGenerativeAi(selectedLanguage);
         await fetchData(selectedLanguage);
         await fetchInterfaceComponent(selectedLanguage);
+        await fetchChat();
         router.push({
             pathname: router.pathname,
             query: { languages: selectedLanguage },
