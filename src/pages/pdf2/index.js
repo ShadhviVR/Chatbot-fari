@@ -14,15 +14,26 @@ function Pdf2({ languages }) {
 
     useEffect(() => {
         const fetchDataAndUpdateState = async () => {
-            const response = await fetchData(languages);
-            setResponseData(response.data);
-            const translationData = await fetchGenerativeAi(languages);
-            setTranslatedData(translationData.data);
-            const chat= await fetchChat();
-            setChat(chat);
+            try {
+                const [response, translationData, chatData] = await Promise.all([
+                    fetchData(languages),
+                    fetchGenerativeAi(languages),
+                    fetchChat(),
+                ]);
+    
+                setResponseData(response.data);
+                setTranslatedData(translationData.data);
+                setChat(chatData);
+            } catch (error) {
+                setError(error);
+            } finally {
+                setLoading(false);
+            }
         };
+    
         fetchDataAndUpdateState();
     }, [languages]);
+    
 
 
     return (
