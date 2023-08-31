@@ -56,13 +56,7 @@ function App({ Component, pageProps }) {
             <InputTypeProvider>
               <OutputTypeProvider>
                 <div className={styles.pageContainer}>
-                  <Header
-                    setNextPageHref={setNextPageHref}
-                    disabled={!nextPageHref}
-                    setSubmitForm={setSubmitForm}
-                    setLanguages={setLanguages}
-                    languages={languages}
-                  />
+                  
                   <Component
                     {...pageProps}
                     setNextPageHref={setNextPageHref}
@@ -73,6 +67,8 @@ function App({ Component, pageProps }) {
                   />
                   {isResultPage ? null : !submitForm && (
                     <Footer
+                    setNextPageHref={setNextPageHref}
+                    setSubmitForm={setSubmitForm}
                       handleNextStep={handleNextStep}
                       disabled={!nextPageHref}
                       onSubmit={handleSubmitForm}

@@ -1,7 +1,7 @@
 import styles from './footer.module.css';
 import cls from 'classnames';
 import { useRouter } from 'next/router';
-import { fetchInterfaceComponent, fetchChat, fetchData, fetchGenerativeAi } from '../../api/axios';
+import { fetchInterfaceComponent } from '../../api/axios';
 import { useEffect, useState, useContext } from 'react';
 import Image from 'next/image';
 import { InputTypeContext } from '../../context/InputTypeContext';
@@ -11,7 +11,7 @@ import { PredictionContext } from '../../context/PredictionContext';
 import { VersionContext } from '../../context/VersionContext';
 import { LinkContext } from '../../context/LinkContext';
 
-const Footer = ({ setNextPageHref, setSubmitForm, handleNextStep, handleTryAgain, disabled, onSubmit, languages }) => {
+const Footer = ({ setNextPageHref, setSubmitForm, handleNextStep, disabled, onSubmit, languages }) => {
 
     const { setSelectedInputType } = useContext(InputTypeContext);
     const { setSelectedOutputType } = useContext(OutputTypeContext);
