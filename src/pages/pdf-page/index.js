@@ -1,10 +1,7 @@
 import Head from 'next/head';
 import React from 'react';
 import styles from '../../styles/Home.module.css';
-import Pdf1 from '../../../components/Cards/pdfCard/pdf-card1';
-import Pdf2 from '../../../components/Cards/pdfCard/pdf-card2';
-import Pdf3 from '../../../components/Cards/pdfCard/pdf-card3';
-import Pdf4 from '../../../components/Cards/pdfCard/pdf-card4';
+import Pdf from '../pdf'
 import { useContext, useEffect, useState } from 'react';
 import { InputTypeContext } from '../../../context/InputTypeContext';
 import usePathValue from '../../../handlers/path_handler';
@@ -42,7 +39,7 @@ export default function PdfPage({ setNextPageHref, languages }) {
       fetchDataAndUpdateState();
     }, [languages]);
   
-  
+  console.log(translation && translation.attributes.pdf.pdfs[1].title)
     return (
       <>
         <div className={styles.container}>
@@ -55,25 +52,33 @@ export default function PdfPage({ setNextPageHref, languages }) {
             </p>
           </div>
           <div className={styles.box}>
-            <Pdf1
+            <Pdf
               handleSelectedInput={() => handleSelectedInput('pdf1')}
               selectedInputType={selectedInputType === 'pdf1'}
               handlePathValueClick={() => handlePathValueClick(0)}
+              title={translation && translation.attributes.pdf.pdfs[0].title}
+              category={translation && translation.attributes.pdf.pdfs[0].category}
             />
-            <Pdf2
+            <Pdf
               handleSelectedInput={() => handleSelectedInput('pdf2')}
               selectedInputType={selectedInputType === 'pdf2'}
               handlePathValueClick={() => handlePathValueClick(1)}
+              title={translation && translation.attributes.pdf.pdfs[1].title}
+              category={translation && translation.attributes.pdf.pdfs[1].category}
             />
-            <Pdf3
+            <Pdf
               handleSelectedInput={() => handleSelectedInput('pdf3')}
               selectedInputType={selectedInputType === 'pdf3'}
               handlePathValueClick={() => handlePathValueClick(2)}
+              title={translation && translation.attributes.pdf.pdfs[2].title}
+              category={translation && translation.attributes.pdf.pdfs[2].category}
             />
-            <Pdf4
+            <Pdf
               handleSelectedInput={() => handleSelectedInput('pdf4')}
               selectedInputType={selectedInputType === 'pdf4'}
               handlePathValueClick={() => handlePathValueClick(3)}
+              title={translation && translation.attributes.pdf.pdfs[3].title}
+              category={translation && translation.attributes.pdf.pdfs[3].category}
             />
           </div>
         </div>

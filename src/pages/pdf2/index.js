@@ -35,7 +35,7 @@ function Pdf2({ languages }) {
                     <div className={styles.gridContainer}>
                         <div className={styles.gridItem}>
                             <p className={styles.inputHeader}>This is the pdf you selected</p>
-                            <iframe className={styles.selectedImage} src="https://arxiv.org/pdf/2307.10171.pdf" locale={false}/>
+                            <iframe className={styles.selectedImage} src={translatedData && translatedData.attributes.pdf.pdfs[1].url}/>
                         </div>
                         <div className={styles.gridItem}>
                             <p className={styles.inputHeader}>Ask any question about this pdf</p>

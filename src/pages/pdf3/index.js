@@ -21,7 +21,7 @@ function Pdf3({ languages }) {
         fetchDataAndUpdateState();
     }, [languages]);
 
-
+    console.log(translatedData && translatedData.attributes.pdf.pdfs[2].url)
     return (
         <>
             {loading ? (<Loading />) : (
@@ -35,7 +35,7 @@ function Pdf3({ languages }) {
                     <div className={styles.gridContainer}>
                         <div className={styles.gridItem}>
                             <p className={styles.inputHeader}>This is the pdf you selected</p>
-                            <iframe className={styles.selectedImage} src="https://arxiv.org/pdf/2307.10160.pdf" locale={false}/>
+                            <iframe className={styles.selectedImage} src={translatedData && translatedData.attributes.pdf.pdfs[2].url}/>
                         </div>
                         <div className={styles.gridItem}>
                             <p className={styles.inputHeader}>Ask any question about this pdf</p>
