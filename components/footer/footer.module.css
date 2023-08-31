@@ -6,9 +6,25 @@
 
 .container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin: 0px 40px 40px 40px;
 
+}
+
+.previousBtn {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #2F4FBB;
+    border-radius: 70px;
+    width: auto;
+    height: 50px;
+    color: #2F4FBB;
+    background-color: white;
+    padding: 10px 40px 10px 0px;
 }
 
 
@@ -40,6 +56,10 @@
     border: none;
     background-color: #2F4FBB;
     color: white;
+}
+
+.icon {
+    margin: 10px 20px 10px 40px;
 }
 
 @media (max-width: 2250px) {
