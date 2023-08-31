@@ -5,7 +5,7 @@ export default async function handler(req, res) {
         const { method, body } = req;
         const { languages } = req.query;
 
-        const url = `http://46.226.110.124:5000`;
+        const url = `http://46.226.110.124:5000/initiate`;
 
         const response = await axios.request({
             method,

@@ -1,7 +1,7 @@
 import styles from '../pdf1/pdf.module.css';
 import Loading from '../../../components/Loading/loading';
 import { useEffect, useState } from 'react';
-import { fetchData, fetchGenerativeAi } from '../../../api/axios';
+import { fetchData, fetchGenerativeAi, fetchChat } from '../../../api/axios';
 import ChatInterface from '../chatbotpdf2';
 
 function Pdf2({ languages }) {
@@ -10,6 +10,7 @@ function Pdf2({ languages }) {
     const [error, setError] = useState(null);
     const [translatedData, setTranslatedData] = useState(null);
     const [responseData, setResponseData] = useState(null);
+    const [chat, setChat] = useState(null);
 
     useEffect(() => {
         const fetchDataAndUpdateState = async () => {
@@ -17,6 +18,8 @@ function Pdf2({ languages }) {
             setResponseData(response.data);
             const translationData = await fetchGenerativeAi(languages);
             setTranslatedData(translationData.data);
+            const chat= await fetchChat();
+            setChat(chat.data);
         };
         fetchDataAndUpdateState();
     }, [languages]);
