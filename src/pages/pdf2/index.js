@@ -19,7 +19,7 @@ function Pdf2({ languages }) {
             const translationData = await fetchGenerativeAi(languages);
             setTranslatedData(translationData.data);
             const chat= await fetchChat();
-            setChat(chat.data);
+            setChat(chat);
         };
         fetchDataAndUpdateState();
     }, [languages]);
