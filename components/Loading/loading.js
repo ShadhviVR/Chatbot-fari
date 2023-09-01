@@ -8,7 +8,7 @@ const Loading = () => {
                 <Image
                     alt='Loader'
                     src='static/logo.svg'
-                    width={650}
+                    width={950}
                     height={650}
                     className={styles.logo}
                 />
