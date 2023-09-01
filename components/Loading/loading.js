@@ -12,7 +12,6 @@ const Loading = () => {
                     height={450}
                     className={styles.logo}
                 />
-                <div className={styles.cover}></div>
             </div>
         </div>
     )
