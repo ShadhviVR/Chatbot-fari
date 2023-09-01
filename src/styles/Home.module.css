@@ -41,6 +41,6 @@
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
     max-width: max-content;
-    gap: 40px;
-    margin: 70px auto;
+    gap: 70px;
+    margin: 120px auto;
 }
