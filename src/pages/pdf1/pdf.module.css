@@ -63,8 +63,8 @@
 }
 
 .selectedImage {
-    height: 550px; 
-    width: 650px;
+    height: 700px; 
+    width: 850px;
     border-radius: 15px;
     object-fit: cover;
 }
