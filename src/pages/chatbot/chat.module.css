@@ -55,14 +55,14 @@
     display: flex;
     flex-direction: column; /* Set flex container to column layout */
     justify-content: flex-end; /* Align items to the start and end */
-    height: 550px; /* Set a fixed height for the chat box */
-    width: 650px;
+    height: 750px; /* Set a fixed height for the chat box */
+    width: 850px;
     position: relative;
   }
   
   .chatMessages {
     flex: 1; /* Allow messages to occupy remaining available space */
-  max-height: 440px; /* Set the fixed maximum height for the chat messages area */
+  max-height: 640px; /* Set the fixed maximum height for the chat messages area */
   overflow-y: auto; /* Add scrollbar when content exceeds the height */
   }
 
