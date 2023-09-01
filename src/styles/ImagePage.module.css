@@ -32,7 +32,7 @@
 .content {
     display: flex;
     flex-direction: column;
-
+    line-height: 60px;
 }
 
 
@@ -99,6 +99,7 @@
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
     max-width: max-content;
-    gap: 40px;
+    line-height: 70px;
+    gap: 70px;
     margin: 0 auto;
 }
