@@ -6,7 +6,7 @@
 
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     margin: 0px 40px 40px 40px;
 
 }

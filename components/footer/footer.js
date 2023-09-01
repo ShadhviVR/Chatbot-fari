@@ -2,23 +2,11 @@ import styles from './footer.module.css';
 import cls from 'classnames';
 import { useRouter } from 'next/router';
 import { fetchInterfaceComponent } from '../../api/axios';
-import { useEffect, useState, useContext } from 'react';
-import Image from 'next/image';
-import { InputTypeContext } from '../../context/InputTypeContext';
-import { OutputTypeContext } from '../../context/OutputTypeContext';
-import { GlobalInputContext } from '../../context/GlobalInputContext';
-import { PredictionContext } from '../../context/PredictionContext';
-import { VersionContext } from '../../context/VersionContext';
-import { LinkContext } from '../../context/LinkContext';
+import { useEffect, useState } from 'react';
 
-const Footer = ({ setNextPageHref, setSubmitForm, handleNextStep, disabled, onSubmit, languages }) => {
 
-    const { setSelectedInputType } = useContext(InputTypeContext);
-    const { setSelectedOutputType } = useContext(OutputTypeContext);
-    const { setGlobalInput } = useContext(GlobalInputContext);
-    const { prediction, setPrediction } = useContext(PredictionContext);
-    const { setSelectedVersion } = useContext(VersionContext);
-    const { setLinkSource } = useContext(LinkContext);
+const Footer = ({ handleNextStep, handleTryAgain, disabled, onSubmit, languages }) => {
+
     const [translation, setTranslation] = useState(null);
     const router = useRouter();
 
@@ -31,35 +19,10 @@ const Footer = ({ setNextPageHref, setSubmitForm, handleNextStep, disabled, onSu
         }
     };
 
-    const handleResetPathValue = (pathValue) => {
-        setNextPageHref(pathValue);
-        setSelectedInputType(null);
-        setSelectedOutputType(null);
-        setGlobalInput({});
-        setPrediction(null);
-        setSubmitForm(false);
-        setSelectedVersion([]);
-        setLinkSource('');
-    };
-
-    const handlePreviousStep = async () => {
-        
-        if (router.pathname === '/output') {
-            setSelectedInputType(null);
-            setSelectedOutputType(null);
-            setNextPageHref(null);
-        }
-        else if
-            (router.pathname === '/image-page' || router.pathname === '/pdf-page') {
-            setSelectedOutputType(null);
-            setGlobalInput({});
-            //cancelPrediction(cancelUrl);
-        } else if (router.pathname === '/result') {
-            setPrediction(null);
-            setGlobalInput({});
-            setLinkSource('');
-        }
-        router.back(); // Navigate to the previous page
+    const handleTryAgainClick = (e) => {
+        handleTryAgain(); // Call the function to handle "Try Again" action
+        e.preventDefault();
+        router.reload();
     };
 
     useEffect(() => {
@@ -70,19 +33,11 @@ const Footer = ({ setNextPageHref, setSubmitForm, handleNextStep, disabled, onSu
         fetchDataAndUpdateState();
     }, [languages]);
 
+    const shouldDisplayTryAgainButton = ['/chat', '/headphone', '/tortoise','/color', '/building','/pdf1', '/pdf2','/pdf3', '/pdf4'].includes(router.pathname);
 
     return (
         <footer className={styles.footer} >
             <div className={styles.container}>
-                <div className={styles.btnContainer}>
-                <button
-                    disabled={disabled}
-                    onClick={handlePreviousStep}
-                    className={styles.previousBtn}>
-                    <Image className={styles.icon} src="/static/arrow-left-light.svg" alt="arrow" width={24} height={24} />
-                    {translation && translation.data.attributes.previous}
-                </button>
-                </div>
                 <div className={styles.btnWrapper}>
                     <button
                         onClick={handleButtonClick}
@@ -90,7 +45,14 @@ const Footer = ({ setNextPageHref, setSubmitForm, handleNextStep, disabled, onSu
                         className={cls(styles.nextStepBtn, { [styles.disabledBtn]: disabled })}>
                         {translation && translation.data.attributes.next}
                     </button>
-                    
+                    {shouldDisplayTryAgainButton && (
+                    <button
+                        onClick={handleTryAgainClick}
+                        className={styles.tryAgainBtn}
+                    >
+                        {translation && translation.data.attributes.try_again}
+                    </button>
+                    )}
                 </div>
             </div>
         </footer>
