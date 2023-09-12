@@ -19,7 +19,7 @@ const ChatInterface = () => {
   useEffect(() => {
     const initiateConversation = async () => {
       try {
-        const response = await axios.get(`${API_BASE_URL}/initiate?pdf_url=https://www.editions-allia.com/files/pdf_843_file.pdf`);
+        const response = await axios.get(`${API_BASE_URL}/initiate?pdf_url=https://memberfiles.freewebs.com/23/04/36560423/podcast/ACT%2001.pdf`);
         setConversationId(response.data.conversation_id);
       } catch (error) {
         console.error('Error initiating conversation:', error);
